@@ -1,0 +1,93 @@
+
+
+:root {
+
+  --c-bg:          #F5F0E4;   /* page background (warm cream)      */
+  --c-bg-wash:     #FAF6EC;   /* lighter wash / large panels       */
+  --c-bg-deep:     #EBE2CF;   /* deeper wash, vignette edge        */
+  --c-surface:     #FDFBF5;   /* cards — elegant off-white ivory   */
+  --c-surface-2:   #F3ECDD;   /* sunken / secondary / table stripe */
+  --c-surface-3:   #E9E0CC;   /* inset, disabled, track            */
+  --c-modal:       #FEFCF7;   /* modal / dropdown panel            */
+
+  --c-glass:       rgba(255,255,255,0.72);
+  --c-glass-2:     rgba(255,255,255,0.86);
+  --c-glass-3:     rgba(255,255,255,0.95);
+
+
+  --c-ink:         #2A211A;   /* primary text    ~13:1 on page bg   */
+  --c-ink-2:       #4E4335;   /* secondary text   ~8:1              */
+  --c-muted:       #6A5E4E;   /* muted warm gray  4.7:1 worst case  */
+  --c-dim:         #9A8B74;   /* placeholders + DISABLED ONLY — this
+                                 one is deliberately below AA, so never
+                                 use it for content text (WCAG exempts
+                                 placeholders / disabled controls).   */
+  --c-on-gold:     #241A02;   /* text sitting ON a solid gold fill  */
+
+  --c-gold-dim:    #A88322;
+  --c-gold:        #C9A227;
+  --c-gold-light:  #E6CE7A;
+  --c-gold-pale:   #F1E5C2;
+  --c-gold-rgb:    150, 116, 28;   /* base for all rgba() tints   */
+
+  --c-gold-ink:        #7A5C18;    /* 6.0:1 on ivory, 4.9:1 on gold-pale */
+  --c-gold-ink-strong: #61490F;    /* 7.9:1 — small / bold text          */
+
+  --c-line-hair:   rgba(150,116,28,0.10);
+  --c-line-soft:   rgba(150,116,28,0.17);
+  --c-line:        rgba(150,116,28,0.28);
+  --c-line-strong: rgba(150,116,28,0.48);
+
+  --c-sh-xs:   0 1px 3px rgba(90,68,28,0.06);
+  --c-sh-sm:   0 2px 10px rgba(90,68,28,0.07);
+  --c-sh-md:   0 10px 30px -12px rgba(90,68,28,0.18), 0 2px 6px rgba(90,68,28,0.05);
+  --c-sh-lg:   0 26px 60px -28px rgba(74,55,20,0.30), 0 4px 14px rgba(90,68,28,0.07);
+  --c-sh-xl:   0 40px 90px -40px rgba(74,55,20,0.38), 0 6px 20px rgba(90,68,28,0.08);
+  --c-sh-gold: 0 6px 22px rgba(201,162,39,0.32);
+
+
+  --c-red:        #A32019;  --c-red-bg:   rgba(179,38,30,0.08);  --c-red-line:   rgba(179,38,30,0.30);
+  --c-green:      #146334;  --c-green-bg: rgba(27,122,67,0.09);  --c-green-line: rgba(27,122,67,0.30);
+  --c-blue:       #1A5390;  --c-blue-bg:  rgba(31,95,168,0.09);  --c-blue-line:  rgba(31,95,168,0.28);
+  --c-amber:      #6B4A04;  --c-amber-bg: rgba(154,107,8,0.10);  --c-amber-line: rgba(154,107,8,0.30);
+  --c-wa:         #0F7A40;  --c-wa-fill:  #25D366;
+
+
+  --c-grad-gold:  linear-gradient(135deg, #A88322 0%, #D8B441 45%, #E6CE7A 72%, #B8912E 100%);
+
+  --c-grad-gold-ink: linear-gradient(135deg, #6B5216 0%, #A5801F 50%, #7A5D18 100%);
+}
+
+html { background: var(--c-bg); }
+
+::selection      { background: rgba(201,162,39,0.26); color: var(--c-ink); }
+::-moz-selection { background: rgba(201,162,39,0.26); color: var(--c-ink); }
+
+* { scrollbar-color: rgba(150,116,28,0.38) transparent; scrollbar-width: thin; }
+*::-webkit-scrollbar { width: 10px; height: 10px; }
+*::-webkit-scrollbar-track { background: transparent; }
+*::-webkit-scrollbar-thumb {
+  background: rgba(150,116,28,0.30);
+  border-radius: 99px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+*::-webkit-scrollbar-thumb:hover { background: rgba(150,116,28,0.50); background-clip: content-box; }
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+  -webkit-text-fill-color: var(--c-ink);
+  -webkit-box-shadow: 0 0 0 1000px #FBF6EA inset;
+  caret-color: var(--c-ink);
+  transition: background-color 9999s ease-out 0s;
+}
+
+:root { color-scheme: light; }
+
+:where(a, button, input, select, textarea, [tabindex]):focus-visible {
+  outline: 2px solid rgba(138,106,31,0.75);
+  outline-offset: 2px;
+}
